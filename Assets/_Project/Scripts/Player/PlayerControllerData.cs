@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace LeonBrave.Player
 {
     [System.Serializable]
@@ -5,5 +7,6 @@ namespace LeonBrave.Player
     public class PlayerControllerData
     {
         public float MovementSpeed;
+        public Rigidbody PlayerRigidBody;
     }
 }

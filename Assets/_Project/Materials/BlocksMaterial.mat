@@ -13,7 +13,7 @@ Material:
   - _EMISSION
   m_InvalidKeywords: []
   m_LightmapFlags: 2
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -76,6 +76,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.9716981, g: 0.97167665, b: 0, a: 0}
-    - _EmissionColor: {r: 0.44285068, g: 0.4433962, b: 0.21124065, a: 0}
+    - _Color: {r: 0.056695063, g: 0.9339623, b: 0.030838395, a: 0}
+    - _EmissionColor: {r: 0.31719476, g: 0.8301887, b: 0.5504559, a: 0}
   m_BuildTextureStacks: []
