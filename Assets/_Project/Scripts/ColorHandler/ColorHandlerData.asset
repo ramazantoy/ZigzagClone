@@ -21,10 +21,8 @@ MonoBehaviour:
   ColorSetTime: 1
   ColorDatas:
   - MainColor: {r: 0, g: 0.5200343, b: 1, a: 0}
-    EmissionColor: {r: 0.41585082, g: 0.720946, b: 0.990566, a: 0}
-  - MainColor: {r: 0.056695063, g: 0.9339623, b: 0.030838395, a: 0}
-    EmissionColor: {r: 0.31719476, g: 0.8301887, b: 0.5504559, a: 0}
-  - MainColor: {r: 0.9056604, g: 0.21165526, b: 0.09825563, a: 0}
-    EmissionColor: {r: 0.82849574, g: 0.2660199, b: 0.9245283, a: 0}
-  - MainColor: {r: 0.9716981, g: 0.97167665, b: 0, a: 0}
-    EmissionColor: {r: 0.44285068, g: 0.4433962, b: 0.21124065, a: 0}
+    EmissionColor: {r: 0.36632255, g: 0.4508059, b: 0.5283019, a: 0}
+  - MainColor: {r: 0, g: 1, b: 0.6721442, a: 0}
+    EmissionColor: {r: 0.36632255, g: 0.4508059, b: 0.5283019, a: 0}
+  - MainColor: {r: 0.8752122, g: 0, b: 1, a: 0}
+    EmissionColor: {r: 0.36632255, g: 0.4508059, b: 0.5283019, a: 0}

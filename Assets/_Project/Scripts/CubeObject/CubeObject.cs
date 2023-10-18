@@ -8,51 +8,60 @@ namespace LeonBrave.CubeObjects
 {
     public class CubeObject : MonoBehaviour
     {
-        [SerializeField]
-        private CubeObjectData _properties;
+        [SerializeField] private CubeObjectData _properties;
 
         private float _blowTimer = 0f;
-        private float _poolTimer = 0f;
+
+        [SerializeField]
+        private bool _isGround;
 
         private void OnEnable()
         {
-            _poolTimer = 0f;
+            _properties.CubeObjectState = CubeObjectState.InGame;
+            _blowTimer = 0;
         }
 
-        private void GotoPool()
+        private void GotoNewPos()
         {
-            CubeObjectPool.Instance.AddObject(gameObject);
+            if (_isGround)
+            {
+                gameObject.SetActive(false);
+            }
+            _blowTimer = 0;
+            _properties.CubeObjectState = CubeObjectState.InGame;
+            CubeHandler.CubeHandler.Instance.AddCube(gameObject);
+      
         }
 
         private void Update()
         {
-            if (_properties.CubeObjectState == CubeObjectState.InGame)
+            if (_properties.CubeObjectState != CubeObjectState.PoolTime)
             {
-                _poolTimer += Time.deltaTime;
-                if (_poolTimer >= _properties.PoolTime)
-                {
-                    _properties.CubeObjectState = CubeObjectState.PoolTime;
-                }
+                return;
             }
-            else
+
+            _blowTimer += Time.deltaTime;
+            if (_blowTimer >= _properties.BlowTime)
             {
-                _blowTimer += Time.deltaTime;
-                if (_blowTimer >= _properties.BlowTime)
-                {
-                    GotoPool();
-                }
+                GotoNewPos();
             }
-            
-      
         }
 
         private void FixedUpdate()
         {
-            if(_properties.CubeObjectState!=CubeObjectState.PoolTime) return;
+            if (_properties.CubeObjectState != CubeObjectState.PoolTime) return;
 
-            transform.position += Vector3.down * _properties.DownSpeed*Time.fixedDeltaTime;
-       
+            transform.position += Vector3.down * _properties.DownSpeed * Time.fixedDeltaTime;
+        }
+
+        private void OnCollisionExit(Collision collision)
+        {
+            if (_properties.CubeObjectState != CubeObjectState.InGame) return;
+
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                _properties.CubeObjectState = CubeObjectState.PoolTime;
+            }
         }
     }
-
 }

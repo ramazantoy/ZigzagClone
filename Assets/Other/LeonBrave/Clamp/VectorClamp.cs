@@ -13,5 +13,4 @@ public class VectorClamp
         Y = new ClampVal();
         Z = new ClampVal();
     }
-    
 }

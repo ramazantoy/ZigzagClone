@@ -9,7 +9,6 @@ namespace LeonBrave.CubeObjects
         public CubeObjectState CubeObjectState;
 
         public float BlowTime;
-        public float PoolTime;
         public float DownSpeed;
     }
 }

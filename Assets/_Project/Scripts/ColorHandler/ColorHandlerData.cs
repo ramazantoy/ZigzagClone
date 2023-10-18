@@ -17,11 +17,10 @@ namespace LeonBrave.ColorHandler
         public ColorData GetRandomColorData()
         {
             if (ColorDatas == null || ColorDatas.Count <= 0) return null;
-            
-            int randomIndex = UnityEngine.Random.Range(0, ColorDatas.Count);
-            
-            return ColorDatas[randomIndex];
 
+            int randomIndex = UnityEngine.Random.Range(0, ColorDatas.Count);
+
+            return ColorDatas[randomIndex];
         }
     }
 }

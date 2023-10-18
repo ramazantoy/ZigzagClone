@@ -1,51 +1,57 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
 namespace LeonBrave.ColorHandler
 {
     public class ColorHandler : MonoBehaviour
     {
-        [SerializeField]
-        private ColorHandlerData _properties;
+        [SerializeField] private ColorHandlerData _properties;
 
-
-        private float _colorTimer = 0f;
-        private float _targetColorTime;
+        private Color targetMainColor;
+        private Color targetEmissionColor;
+        private float colorChangeDuration;
 
         private void Awake()
         {
-           SetTimer();
+            SetTimer();
+            SetColor();
         }
 
         private void SetTimer()
         {
-            _targetColorTime = _properties.UseRandomTime ? _properties.RandomTime.RandomValue : _properties.RegularTime;
+            colorChangeDuration = _properties.UseRandomTime ? _properties.RandomTime.RandomValue : _properties.RegularTime;
         }
 
-        private void ChangeColor()
+        private void SetColor()
         {
             ColorData colorDataTemp = _properties.GetRandomColorData();
-
-            _properties.CubeMaterial.color = colorDataTemp.MainColor;
-            _properties.CubeMaterial.SetColor("_EmissionColor",colorDataTemp.EmissionColor);
-
-            if (_properties.UseRandomTime)
-            {
-                SetTimer();
-            }
+            targetMainColor = colorDataTemp.MainColor;
+            targetEmissionColor = colorDataTemp.EmissionColor;
         }
+
+        private float _timer = 0;
+
         private void Update()
         {
-            _colorTimer += Time.deltaTime;
-
-            if (_colorTimer >= _targetColorTime)
+            _timer += Time.deltaTime;
+            
+            if (_timer >= colorChangeDuration)
             {
-                _colorTimer = 0f;
-                ChangeColor();
+                ChangeColor(1.0f); 
+                SetTimer(); 
+                SetColor();
+                _timer = 0;
             }
+            else
+            {
+                float t = _timer / colorChangeDuration;
+                ChangeColor(t);
+            }
+        }
+
+        private void ChangeColor(float t)
+        {
+            _properties.CubeMaterial.color = Color.Lerp(_properties.CubeMaterial.color, targetMainColor, t);
+            _properties.CubeMaterial.SetColor("_EmissionColor", Color.Lerp(_properties.CubeMaterial.GetColor("_EmissionColor"), targetEmissionColor, t));
         }
     }
 }

@@ -20,6 +20,7 @@ namespace CreateClasses
         #endregion
 
         #region ENUM
+
         private const string enumTemplate = "Enum.cs.txt";
 
         [MenuItem(itemName: "Assets/Create/C# Enum", isValidateFunction: false, priority: 51)]
@@ -27,9 +28,11 @@ namespace CreateClasses
         {
             ProjectWindowUtil.CreateScriptAssetFromTemplateFile(path + enumTemplate, "Enum.cs");
         }
+
         #endregion
 
         #region INTERFACE
+
         private const string interfaceTemplate = "Interface.cs.txt";
 
         [MenuItem(itemName: "Assets/Create/C# Interface", isValidateFunction: false, priority: 51)]
@@ -37,9 +40,11 @@ namespace CreateClasses
         {
             ProjectWindowUtil.CreateScriptAssetFromTemplateFile(path + interfaceTemplate, "Interface.cs");
         }
+
         #endregion
 
         #region STRUCT
+
         private const string structTemplate = "Struct.cs.txt";
 
         [MenuItem(itemName: "Assets/Create/C# Struct", isValidateFunction: false, priority: 51)]
@@ -47,6 +52,7 @@ namespace CreateClasses
         {
             ProjectWindowUtil.CreateScriptAssetFromTemplateFile(path + structTemplate, "Struct.cs");
         }
+
         #endregion
     }
 }

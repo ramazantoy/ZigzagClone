@@ -7,10 +7,8 @@ namespace LeonBrave.Player
 {
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField] private PlayerControllerData _properties;
 
-        [SerializeField]
-        private PlayerControllerData _properties;
-        
         private float _currentXDirection = 1;
 
 
@@ -27,12 +25,9 @@ namespace LeonBrave.Player
         private void FixedUpdate()
         {
             Vector3 moveDirection = new Vector3(_currentXDirection, 0, 1);
-            Vector3 newPosition = transform.position + (moveDirection * Time.fixedDeltaTime * _properties.MovementSpeed);
+            Vector3 newPosition =
+                transform.position + (moveDirection * Time.fixedDeltaTime * _properties.MovementSpeed);
             _properties.PlayerRigidBody.MovePosition(newPosition);
         }
-
     }
-
 }
-
-

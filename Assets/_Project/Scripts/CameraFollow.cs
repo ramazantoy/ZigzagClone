@@ -5,10 +5,8 @@ using UnityEngine.Serialization;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField]
-    private Transform _targetTransform;
-    [SerializeField]
-    private float _followSpeed = 5.0f;
+    [SerializeField] private Transform _targetTransform;
+    [SerializeField] private float _followSpeed = 5.0f;
 
     private float zOffset;
 
