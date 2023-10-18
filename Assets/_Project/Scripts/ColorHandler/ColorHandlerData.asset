@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b19bde67f023e458272b76e96a703b, type: 3}
+  m_Name: ColorHandlerData
+  m_EditorClassIdentifier: 
+  CubeMaterial: {fileID: 2100000, guid: 227e14e0729ac6746bed75ecc8da20e5, type: 2}
+  UseRandomTime: 0
+  RandomTime:
+    Max: 3
+    Min: 2
+  RegularTime: 5
+  ColorSetTime: 1
+  ColorDatas:
+  - MainColor: {r: 0, g: 0.5200343, b: 1, a: 0}
+    EmissionColor: {r: 0.41585082, g: 0.720946, b: 0.990566, a: 0}
+  - MainColor: {r: 0.056695063, g: 0.9339623, b: 0.030838395, a: 0}
+    EmissionColor: {r: 0.31719476, g: 0.8301887, b: 0.5504559, a: 0}
+  - MainColor: {r: 0.9056604, g: 0.21165526, b: 0.09825563, a: 0}
+    EmissionColor: {r: 0.82849574, g: 0.2660199, b: 0.9245283, a: 0}
+  - MainColor: {r: 0.9716981, g: 0.97167665, b: 0, a: 0}
+    EmissionColor: {r: 0.44285068, g: 0.4433962, b: 0.21124065, a: 0}
