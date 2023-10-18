@@ -112,6 +112,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _properties:
     CubeObjectState: 0
-    BlowTime: 4
-    PoolTime: 3
+    BlowTime: 1.5
+    PoolTime: 2
     DownSpeed: 2
