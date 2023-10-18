@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ColorHandlerData
   m_EditorClassIdentifier: 
   CubeMaterial: {fileID: 2100000, guid: 227e14e0729ac6746bed75ecc8da20e5, type: 2}
-  UseRandomTime: 0
+  UseRandomTime: 1
   RandomTime:
     Max: 3
     Min: 2
