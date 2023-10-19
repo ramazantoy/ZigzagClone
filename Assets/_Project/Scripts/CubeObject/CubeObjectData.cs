@@ -10,5 +10,10 @@ namespace LeonBrave.CubeObjects
 
         public float BlowTime;
         public float DownSpeed;
+
+         [Range(0,100)]
+        public int GiveExtraPointRate=60;
+
+        public GameObject ExtraPointObject;
     }
 }

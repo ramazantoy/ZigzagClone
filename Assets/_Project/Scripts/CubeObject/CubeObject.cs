@@ -20,6 +20,7 @@ namespace LeonBrave.CubeObjects
         {
             _properties.CubeObjectState = CubeObjectState.InGame;
             _blowTimer = 0;
+            GiveExtraPoint();
         }
 
         private void GotoNewPos()
@@ -31,6 +32,7 @@ namespace LeonBrave.CubeObjects
             _blowTimer = 0;
             _properties.CubeObjectState = CubeObjectState.InGame;
             CubeHandler.CubeHandler.Instance.AddCube(gameObject);
+            GiveExtraPoint();
       
         }
 
@@ -40,6 +42,7 @@ namespace LeonBrave.CubeObjects
             
             if (_properties.CubeObjectState != CubeObjectState.PoolTime)
             {
+
                 return;
             }
 
@@ -64,6 +67,23 @@ namespace LeonBrave.CubeObjects
             if (collision.gameObject.CompareTag("Player"))
             {
                 _properties.CubeObjectState = CubeObjectState.PoolTime;
+                
+                if (!_isGround)
+                {
+                    _properties.ExtraPointObject.SetActive(false);
+                }
+           
+            }
+        }
+
+        private void GiveExtraPoint()
+        {
+            if(_isGround) return;
+            
+            int rate = UnityEngine.Random.Range(0, 101);
+            if (rate < _properties.GiveExtraPointRate)
+            {
+                _properties.ExtraPointObject.SetActive(true);
             }
         }
     }

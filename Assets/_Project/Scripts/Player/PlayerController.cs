@@ -34,6 +34,18 @@ namespace LeonBrave.Player
             }
         }
 
+        public void CurrentScoreUp(int score)
+        {
+            _currentScore += score;
+            
+            int highScore = SaveManager.SaveManager.Instance.GameSaveState.HighScore;
+
+            if (_currentScore > highScore)
+            {
+                SaveManager.SaveManager.Instance.GameSaveState.HighScore = _currentScore;
+                CanvasController.Instance.UpdateHighScore();
+            }
+        }
         private void FixedUpdate()
         {
             if(GameManager.GameManager.Instance.GameState!=GameState.Playing) return;
