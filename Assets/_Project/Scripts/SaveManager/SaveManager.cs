@@ -34,7 +34,6 @@ namespace LeonBrave.SaveManager
                 }
 
                 Load();
-                Debug.Log(_gameSaveState.HighScore);
             }
             else if (Instance != this)
             {

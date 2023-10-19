@@ -1744,7 +1744,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd8a683c2543eb49b987eb5bbe97dff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _highScore: {fileID: 75616904}
+  _highScores:
+  - {fileID: 75616904}
+  - {fileID: 323199226}
   _scoreTexts:
   - {fileID: 1550476365}
   - {fileID: 1782636571}
@@ -2638,7 +2640,7 @@ GameObject:
   - component: {fileID: 2029054113}
   - component: {fileID: 2029054112}
   m_Layer: 5
-  m_Name: ScoreText_1
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2967,7 +2969,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 931328481, guid: 8c005f8555b307b4f9dd5073379605d7, type: 3}
       propertyPath: _properties.MovementSpeed
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 931328481, guid: 8c005f8555b307b4f9dd5073379605d7, type: 3}
       propertyPath: _properties.PlayerRigidBody

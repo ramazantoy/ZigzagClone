@@ -15,8 +15,8 @@ MonoBehaviour:
   StartCubeCount: 250
   CubePositionClamp:
     X:
-      Max: 1.6
-      Min: -1.6
+      Max: 1.4
+      Min: -1.4
     Y:
       Max: -0.5
       Min: -0.5
