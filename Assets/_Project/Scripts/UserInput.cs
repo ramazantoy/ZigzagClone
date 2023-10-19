@@ -1,3 +1,4 @@
+using LeonBrave.GameManager;
 using UnityEngine;
 using TouchPhase = UnityEngine.TouchPhase;
 
@@ -26,6 +27,8 @@ namespace LeonBrave.UserInput
 
         private void Update()
         {
+            if(GameManager.GameManager.Instance.GameState!=GameState.Playing) return;
+            
 #if UNITY_EDITOR
             if (Input.GetMouseButtonDown(0))
             {

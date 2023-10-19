@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using LeonBrave.GameManager;
 using UnityEngine;
 
 namespace LeonBrave.CubeObjects
@@ -35,6 +36,8 @@ namespace LeonBrave.CubeObjects
 
         private void Update()
         {
+            if(GameManager.GameManager.Instance.GameState!=GameState.Playing) return;
+            
             if (_properties.CubeObjectState != CubeObjectState.PoolTime)
             {
                 return;
@@ -56,7 +59,7 @@ namespace LeonBrave.CubeObjects
 
         private void OnCollisionExit(Collision collision)
         {
-            if (_properties.CubeObjectState != CubeObjectState.InGame) return;
+            if (_properties.CubeObjectState != CubeObjectState.InGame  || GameManager.GameManager.Instance.GameState!=GameState.Playing) return;
 
             if (collision.gameObject.CompareTag("Player"))
             {

@@ -35,6 +35,7 @@ namespace LeonBrave.GameManager
 			if(_gameState!=GameState.None) return;
 
 			_gameState = GameState.Playing;
+			CanvasController.Instance.SetTrigger("OUT");
 		}
 
 
@@ -46,7 +47,7 @@ namespace LeonBrave.GameManager
 
 			if (_gameState == GameState.Lose)
 			{
-				
+				CanvasController.Instance.SetTrigger("LOST");
 			}
 		}
 

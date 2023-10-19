@@ -1,3 +1,4 @@
+using LeonBrave.GameManager;
 using UnityEngine;
 
 namespace LeonBrave.ColorHandler
@@ -32,6 +33,8 @@ namespace LeonBrave.ColorHandler
 
         private void Update()
         {
+            if(GameManager.GameManager.Instance.GameState!=GameState.Playing) return;
+            
             _timer += Time.deltaTime;
             
             if (_timer >= colorChangeDuration)

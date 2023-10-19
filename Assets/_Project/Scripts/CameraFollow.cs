@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using LeonBrave.GameManager;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -17,6 +18,8 @@ public class CameraFollow : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(GameManager.Instance.GameState!=GameState.Playing) return;
+        
         float targetZPosition = _targetTransform.position.z + zOffset;
 
         Vector3 newPosition = transform.position;
